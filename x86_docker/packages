@@ -1,0 +1,8 @@
+archlinux-keyring
+awk
+coreutils
+gzip
+distronode-keyring
+pacman
+sed
+systemd
