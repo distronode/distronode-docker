@@ -9,12 +9,12 @@ RUN pacman-key --init && \
     pacman-mirrors -f 5
 
 RUN [[ "${TARGETPLATFORM}" == "linux/amd64" ]] || exit 0 && \
-    pacman -Syy --noconfirm --needed archlinux-keyring manjaro-keyring && \
-	pacman-key --populate archlinux manjaro
+    pacman -Syy --noconfirm --needed archlinux-keyring distronode-keyring && \
+	pacman-key --populate archlinux distronode
 
 RUN [[ "${TARGETPLATFORM}" == "linux/arm64" ]] || exit 0 && \
-    pacman -Syy --noconfirm --needed archlinuxarm-keyring manjaro-arm-keyring && \
-    pacman-key --populate archlinuxarm manjaro-arm
+    pacman -Syy --noconfirm --needed archlinuxarm-keyring distronode-arm-keyring && \
+    pacman-key --populate archlinuxarm distronode-arm
 
 RUN pacman -S --noconfirm --needed \
         shadow \
