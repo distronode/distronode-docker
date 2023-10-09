@@ -29,7 +29,7 @@ jobs:
           echo "DATE=$(date +%Y%m%d)" >>$GITHUB_ENV
       -
         name: setup-qemu
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v3
       -
         name: setup-buildx
         id: buildx
